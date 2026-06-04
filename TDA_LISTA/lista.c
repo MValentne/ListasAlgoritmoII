@@ -1,4 +1,5 @@
 #include "lista.h"
+#include <complex.h>
 #include <stdio.h>
 
 //Lista vacia
@@ -108,15 +109,15 @@ void MontoPrestamo (tipoLista *MontoPrestamos, tipoLista *PrestamosActualizadosO
         int prestamo = aux->info;
         if (prestamo < 50000){
             prestamo = (int)(prestamo - (prestamo * 0.15)); //descuento del 15%
-            insertarFinal(PrestamosActualizadosOpción1, prestamo);
+            InsertarFinal(PrestamosActualizadosOpción1, prestamo);
         } else {
-            insertarFinal(PrestamosActualizadosOpción1, prestamo);
+            InsertarFinal(PrestamosActualizadosOpción1, prestamo);
         }
         if (prestamo >= 5000){// el if lo pusimos separados no se puede poner else hay casos donde se traba toodo.
             prestamo = (int)(prestamo - (prestamo * 0.05)); //descuento del 5%
-            insertarFinal(PrestamosActualizadosOpción2, prestamo);
+            InsertarFinal(PrestamosActualizadosOpción2, prestamo);
         }else{
-            insertarFinal(PrestamosActualizadosOpción2, prestamo);
+            InsertarFinal(PrestamosActualizadosOpción2, prestamo);
         }
         aux = (*MontoPrestamos)->sig;
         }
