@@ -15,27 +15,26 @@ struct nodo {
 //Un puntero que referencia a un nodo
 typedef struct nodo *tipoLista;
 
-void crearLista(tipoLista *punteroLista );
+void CrearLista(tipoLista *punteroLista );
 
-bool esVacia(tipoLista L);
+bool EsVacia(tipoLista L);
 
-void nuevo_nodo(tipoLista *nuevoN);
+void CrearNodo(tipoLista *nuevoN);
 
-void insertarPrincipio(tipoLista *L, int x);
+void InsertarPrincipio(tipoLista *L, int x);
 
-void insertarFinal(tipoLista *L, int x);
+void InsertarFinal(tipoLista *L, int x);
 
-void eliminarElem(tipoLista *L, int x);
+void Borrar(tipoLista *L, int x);
 
-void imprimir_lista(tipoLista L);
+void Imprimir(tipoLista L);
 
-//Nos permite operar con valores de la fila
-// filavar --> x; x + 1 = ...
-void sacarElemento(tipoLista *L, int *x);
+//Saca un valor de la lista a una variable, itera al siguiente elemento.
+void Sacar(tipoLista *L, int *x);
 
 //Busqueda lineal
-bool existeEnLista(tipoLista L, int x);
+bool ExisteElemento(tipoLista L, int x);
 
-void montoPrestamo (tipoLista *MontoPrestamos, tipoLista *PrestamosActualizadosOpción1, tipoLista *PrestamosActualizadosOpción2);
+void MontoPrestamo(tipoLista *MontoPrestamos, tipoLista *PrestamosActualizadosOpción1, tipoLista *PrestamosActualizadosOpción2);
 
 #endif
