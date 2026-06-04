@@ -2,43 +2,43 @@
 #include <stdio.h>
 
 //Lista vacia
-void crearLista(tipoLista *punteroLista ){
+void CrearLista(tipoLista *punteroLista ){
     *punteroLista = NULL;
 }
 
-bool esVacia(tipoLista L){
+bool EsVacia(tipoLista L){
     if (L == NULL) return (true);
     else return (false);
 }
 
-void nuevo_nodo(tipoLista *nuevoN){
+void CrearNodo(tipoLista *nuevoN){
     *nuevoN = malloc(sizeof(struct nodo)); //--> Asigna memoria a un nuevo nodo
-    if (esVacia(*nuevoN)) { // --> Caso en el que surge error y no se aloca memoria adecuadamente.
+    if (EsVacia(*nuevoN)) { // --> Caso en el que surge error y no se aloca memoria adecuadamente.
         printf("Error: no se pudo asignar memoria\n");
         exit(1);
     }
 }
 
-void insertarPrincipio(tipoLista *L, int x) {
+void InsertarPrincipio(tipoLista *L, int x) {
     tipoLista nuevoNodo; // --> Apunta a basura
-    nuevo_nodo(&nuevoNodo); // --> Apunta al nuevo nodo
+    CrearNodo(&nuevoNodo); // --> Apunta al nuevo nodo
     nuevoNodo->info = x;
     nuevoNodo->sig = *L;
     *L = nuevoNodo;
 }
 
-void insertarFinal(tipoLista *L, int x) {
+void InsertarFinal(tipoLista *L, int x) {
     tipoLista nuevoNodo;
     tipoLista PI;
-    nuevo_nodo(&nuevoNodo);
+    CrearNodo(&nuevoNodo);
     nuevoNodo->info = x;
     nuevoNodo->sig = NULL;
 
-    if (esVacia(*L)) {
+    if (EsVacia(*L)) {
         *L = nuevoNodo;
     } else {
         PI = *L;
-        while (!esVacia((*L)->sig)) {
+        while (!EsVacia((*L)->sig)) {
             *L = (*L)->sig;
         }
         (*L)->sig = nuevoNodo;
@@ -46,16 +46,16 @@ void insertarFinal(tipoLista *L, int x) {
     }
 }
 
-void eliminarElem(tipoLista *L, int x){
+void Borrar(tipoLista *L, int x){
     tipoLista PI, PA = NULL;
     PI = *L;
 
-    while ((!esVacia(*L)) && ((*L)->info != x)){
+    while ((!EsVacia(*L)) && ((*L)->info != x)){
         PA = *L;
         *L = (*L)->sig;
     }
-    if (!esVacia(*L)){
-        if (!esVacia(PA)){
+    if (!EsVacia(*L)){
+        if (!EsVacia(PA)){
             PA->sig = (*L)->sig;
         }
         else{
@@ -66,9 +66,9 @@ void eliminarElem(tipoLista *L, int x){
     *L = PI;
 }
 
-void imprimir_lista(tipoLista L) {
+void Imprimir(tipoLista L) {
     printf("[");
-    while (!esVacia(L)) {
+    while (!EsVacia(L)) {
         printf("%d", L->info);
         if (L->sig != NULL) {
             printf(", ");
@@ -78,7 +78,7 @@ void imprimir_lista(tipoLista L) {
     printf("]\n");
 }
 
-void sacarElemento(tipoLista *L, int *x){
+void Sacar(tipoLista *L, int *x){
     if(*L == NULL){
         exit(1);
     }
@@ -88,8 +88,8 @@ void sacarElemento(tipoLista *L, int *x){
     free(primerNodo);
 }
 
-bool existeEnLista(tipoLista L, int x){
-    while (!esVacia(L)) {
+bool ExisteElemento(tipoLista L, int x){
+    while (!EsVacia(L)) {
         if (L->info == x) {
             return true;
         }else {
@@ -99,12 +99,12 @@ bool existeEnLista(tipoLista L, int x){
     return false;
 }
 
-void montoPrestamo (tipoLista *MontoPrestamos, tipoLista *PrestamosActualizadosOpción1, tipoLista *PrestamosActualizadosOpción2) {
-    crearLista(PrestamosActualizadosOpción1);
-    crearLista(PrestamosActualizadosOpción2);
+void MontoPrestamo (tipoLista *MontoPrestamos, tipoLista *PrestamosActualizadosOpción1, tipoLista *PrestamosActualizadosOpción2) {
+    CrearLista(PrestamosActualizadosOpción1);
+    CrearLista(PrestamosActualizadosOpción2);
 
     tipoLista aux= (*MontoPrestamos);
-    while (!esVacia(*MontoPrestamos)){
+    while (!EsVacia(*MontoPrestamos)){
         int prestamo = aux->info;
         if (prestamo < 50000){
             prestamo = (int)(prestamo - (prestamo * 0.15)); //descuento del 15%
