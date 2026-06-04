@@ -1,3 +1,5 @@
+//dada una lista de numeros enteros, recorrer la lista e 
+//informar cuantos numeros impares hay en la lista.
 #include <stdio.h>
 #include <stdlib.h>
 #include "../TDA_LISTA/lista.h"
