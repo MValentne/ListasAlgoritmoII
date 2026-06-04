@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "lista.h"
+#include "../TDA_LISTA/lista.h"
 
 int main () {
     printf("\nPrograma del PUNTO A\n");
