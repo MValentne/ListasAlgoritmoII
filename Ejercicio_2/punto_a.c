@@ -1,7 +1,7 @@
-//dada una lista de numeros enteros, recorrer la lista e 
+//dada una lista de numeros enteros, recorrer la lista e
 //informar cuantos numeros impares hay en la lista.
+//
 #include <stdio.h>
-#include <stdlib.h>
 #include "../TDA_LISTA/lista.h"
 
 int main () {
@@ -18,16 +18,15 @@ int main () {
             InsertarFinal(&punteroLista, var);
         }
 
-
     printf("La lista es: ");
-    Imprimir(punteroLista);
-    while (!EsVacia(punteroLista)) {
+    Imprimir(punteroLista); //--> Imprime toda la lista
+    while (!EsVacia(punteroLista)) { //--> Busca impares en la lista
         Sacar(&punteroLista, &var);
         if (var % 2 != 0) {
             printf("%d es impar\n", var);
             numerosImpares++;
         }
     }
-    printf("La cantidad de numeros impares de la lista es %d", numerosImpares);
+    printf("La cantidad de numeros impares de la lista es %d\n", numerosImpares);
 
 }
