@@ -41,6 +41,8 @@ d. Un banco mantiene un listado *MontoPréstamos* con los montos de préstamos d
    - **PréstamosActualizadosOpción1:** si el préstamo es menor a $50.000, se aplica un descuento del 15%.
    - **PréstamosActualizadosOpción2:** si el préstamo es mayor o igual a $5.000, se aplica un descuento del 5%.
 
+   ---NOTA---
+   Basicamente generamos dos listas, mediante esas condiciones, con base en la lista de MontoPrestamos. 
 ### Ejercicio 3
 
 Realizar la prueba de escritorio de la operación *InsertarAlPrincipio* con los elementos 5, 2, 83 y 7, en ese orden.
