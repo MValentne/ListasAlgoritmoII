@@ -35,6 +35,6 @@ void Sacar(tipoLista *L, int *x);
 //Busqueda lineal
 bool ExisteElemento(tipoLista L, int x);
 
-void MontoPrestamo(tipoLista *MontoPrestamos, tipoLista *PrestamosActualizadosOpción1, tipoLista *PrestamosActualizadosOpción2);
+// void MontoPrestamo(tipoLista *MontoPrestamos, tipoLista *PrestamosActualizadosOpción1, tipoLista *PrestamosActualizadosOpción2);
 
 #endif

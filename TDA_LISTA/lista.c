@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 //Lista vacia
-void CrearLista(tipoLista *punteroLista ){
+void CrearLista(tipoLista *punteroLista){
     *punteroLista = NULL;
 }
 
@@ -106,7 +106,7 @@ void montoPrestamo (tipoLista *MontoPrestamos, tipoLista *PrestamosActualizadosO
     tipoLista clon;
     CrearLista(&clon);
 
-    double descuento = 0;
+    int descuento = 0;
     int auxiliar = 0;
     int auxiliar2 = 0;
 
@@ -118,14 +118,13 @@ void montoPrestamo (tipoLista *MontoPrestamos, tipoLista *PrestamosActualizadosO
             descuento = (auxiliar * 15) / 100;
             auxiliar = auxiliar - descuento;
             InsertarFinal(PrestamosActualizadosOpción1, auxiliar);
-        } 
+        }
         if (auxiliar2 >= 5000) {
             descuento = (auxiliar2 * 5) / 100;
             auxiliar2 = auxiliar2 - descuento;
             InsertarFinal(PrestamosActualizadosOpción2, auxiliar2);
         }
-        
+
     }
     *MontoPrestamos = clon;
 }
-    
